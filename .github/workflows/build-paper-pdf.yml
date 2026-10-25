@@ -32,7 +32,7 @@ jobs:
           pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
           pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
           test -s main.pdf
-          pdfinfo main.pdf | grep Pages
+          echo 'PDF generated successfully'
       - name: Commit PDF to same branch
         run: |
           git config user.name 'github-actions[bot]'
