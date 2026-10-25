@@ -1,0 +1,3 @@
+# Optional QuTiP dependency for planned quantum-state cross-check; NOT used by src/pilot.py.
+# Exact core experiment uses Python >=3.10 standard library only.
+qutip==5.3.1
