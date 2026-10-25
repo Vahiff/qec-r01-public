@@ -1,6 +1,6 @@
 # QEC-R01 manuscript source
 
-Working scientific draft only. Author names/affiliations are **unverified** and must be filled in by the actual contributors before any arXiv submission. No external submission or endorsement has occurred.
+Working scientific draft only. The author is identified as **Vahif Khalilov**; institutional affiliation has not been supplied and must be resolved before any arXiv submission. No external submission or endorsement has occurred.
 
 ## Local build
 
@@ -18,7 +18,7 @@ pdflatex -interaction=nonstopmode -halt-on-error main.tex
 
 ## Pre-submission gates (NOT VERIFIED)
 
-- Actual authors and affiliations, explicit approval for release.
+- Author contribution statement, institutional affiliation (if applicable), explicit approval for release.
 - Independent technical review and literature originality assessment.
 - arXiv policies, category suitability, account endorsement (when applicable).
 - Independently reproducible compilation in the arXiv TeX environment.
