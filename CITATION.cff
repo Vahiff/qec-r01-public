@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite it using these metadata."
+authors:
+  - family-names: Vahiff
+title: "Finite-Calibration Bounds for Correlated-Noise Decoders in a 3-Qubit Repetition Code"
+version: "1.0.0"
+date-released: "2026-10-25"
+repository-code: "https://github.com/Vahiff/qec-r01-public"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Vahiff
+  title: "Finite-Calibration Bounds for Correlated-Noise Decoders in a 3-Qubit Repetition Code"
+  year: 2026
