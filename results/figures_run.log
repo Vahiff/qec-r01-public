@@ -1,0 +1,2 @@
+FIGURES: results/figures/calibration_branch_selection.png results/figures/calibration_logical_error.png
+ANALYTIC ONLY figure: results/figures/analytic_population_decay_NOT_QUTIP.png | gamma=0.4

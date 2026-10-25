@@ -1,0 +1,22 @@
+QEC-R01 Phase 2 Step 1: executed process
+UTC start: 2026-10-25T06:17:22.281812+00:00
+Python: 3.13.5
+Platform: Linux-6.18.55-x86_64-with-glibc2.41
+Command: /opt/pyvenv/bin/python -S /mnt/data/qec-r01/src/calibration.py --output /mnt/data/qec-r01/results/calibration.json
+Return code: 0
+Elapsed seconds: 0.898875
+Source SHA256: 122a36d3cac5bbdbb14c5454e289ac1e9136d128e47c0d6cd921e7ea1fa08aad
+Result SHA256: f4d2a0efdbd75c8854e4e04ce6ffb5b39e12906794bdb5f3d8eea5e12559655e
+=== STDOUT ===
+QEC-R01 Phase 2 | p=0.0200 b_true=0.0400 | R=2000 | seed=20261025
+exact minimum-weight LER=0.039584; oracle MAP LER=0.020000
+N     oracle_branch_frac   avg_exact_LER   gain_pp
+    0    0.0000           0.039584       +0.0000
+   50    0.7980           0.023956       +1.5628
+  200    0.8995           0.021968       +1.7616
+ 1000    0.9975           0.020049       +1.9535
+ 5000    1.0000           0.020000       +1.9584
+H1 criteria met: True
+JSON: /mnt/data/qec-r01/results/calibration.json
+=== STDERR ===
+(empty)

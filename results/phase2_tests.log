@@ -1,0 +1,15 @@
+test_deterministic (test_calibration.CalibrationTests.test_deterministic) ... ok
+test_estimator_and_clipping (test_calibration.CalibrationTests.test_estimator_and_clipping) ... ok
+test_invalid (test_calibration.CalibrationTests.test_invalid) ... ok
+test_no_calibration_baseline (test_calibration.CalibrationTests.test_no_calibration_baseline) ... ok
+test_wilson (test_calibration.CalibrationTests.test_wilson) ... ok
+test_decoder_branch (test_pilot.PilotTests.test_decoder_branch) ... ok
+test_each_syndrome_has_two_complementary_masks (test_pilot.PilotTests.test_each_syndrome_has_two_complementary_masks) ... ok
+test_exact_known_rates (test_pilot.PilotTests.test_exact_known_rates) ... ok
+test_mc_deterministic_and_counts (test_pilot.PilotTests.test_mc_deterministic_and_counts) ... ok
+test_probabilities_sum_to_one (test_pilot.PilotTests.test_probabilities_sum_to_one) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.032s
+
+OK

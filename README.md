@@ -1,12 +1,12 @@
 # QEC-R01 — correlated X-noise in a 3-qubit repetition code
 
-**Status:** executable **exploratory** code-capacity pilot. The pre-registered calibration hypothesis is **NOT TESTED**. Repository publication is **not** a peer-reviewed result.
+**Status:** executable **exploratory** code-capacity pilot. The primary H1 calibration condition at `b=0.04` was executed in Phase 2; generality and scientific novelty are not verified. Repository publication is **not** a peer-reviewed result.
 
 ## Model and research question
 
 Codewords `|0_L> = |000>` and `|1_L> = |111>`, with syndrome generators `Z0 Z1` and `Z1 Z2`. Noise is `E = (Z0,Z1,Z2) XOR (B,B,0)` where each `Zi ~ Bernoulli(p)` independently, `B ~ Bernoulli(b)`, and `p = 0.02`. The **additional** paired event may cancel independent errors. Perfect syndrome measurements, one round, no Z/Y errors, leakage, faulty gates, or hardware are modeled. This is X-only protection (X-distance 3), not a distance-3 code against arbitrary Pauli noise (full quantum distance 1).
 
-**Question:** Under what correlation rates and finite calibration sample sizes does a correlation-aware decoder beat minimum-weight decoding? This repository currently answers only an **exploratory subquestion** with known assumed `b = 0.04`: performance vs. true `b` at 0, .01, .02, .04, .08. The confirmatory finite-calibration experiment is specified in `research/QUESTION.md`, **NOT RUN**.
+**Question:** Under what correlation rates and finite calibration sample sizes does a correlation-aware decoder beat minimum-weight decoding? This repository currently answers only an **exploratory subquestion** with known assumed `b = 0.04`: performance vs. true `b` at 0, .01, .02, .04, .08. The finite-calibration primary condition at `b=0.04` was run in Phase 2 (see `results/REPORT.md`); the full registered grid remains **NOT RUN**.
 
 The pilot compares `minimum-weight` decoding against a syndrome-wise maximum-a-posteriori (MAP) decoder calibrated to assumed `b = 0.04`. For the ambiguous syndrome, its model's switch threshold is `b* = p(1-p) = 0.0196`. This is a **decoder decision threshold**, not a fault-tolerance threshold.
 
@@ -48,3 +48,11 @@ No tokens, credentials or private user data are needed. Do not put secrets in th
 
 Relevant background: [IBM repetition codes](https://quantum.cloud.ibm.com/docs/tutorials/repetition-codes), [Sivak et al., PRL 133, 150603 (2024)](https://doi.org/10.1103/PhysRevLett.133.150603), [Google Quantum AI, Nature (2024)](https://www.nature.com/articles/s41586-024-08449-y).
 [Изменено вручную пользователем во время сессии]
+
+
+## Phase 2 (2026-10-25) — executed outcomes
+
+- H1 at true `b=0.04`, `N=1000`, 2000 calibration replicates: **1995/2000 = 99.75%** selected the oracle branch; mean exact logical X-error **0.02004896** vs minimum-weight **0.039584**. Both registered descriptive criteria met in this idealized model; full `b` grid is **NOT RUN**.
+- QuTiP 5.3.1 script is committed but **BLOCKED by missing package and DNS**. Analytical decay figure explicitly says `NOT_QUTIP`.
+- Arbitrary `X`, `Y`, `Z` single-qubit correction via `[[3,1,3]]` is ruled out by the quantum Singleton bound; no fake `shor3_test.py` is included.
+- [Phase 2 report](results/REPORT.md) · [calibration data](results/calibration.json) · [execution log](results/calibration.log) · [figures](results/figures/)

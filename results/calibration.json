@@ -1,0 +1,125 @@
+{
+  "study": "QEC-R01 Phase 2 H1 preregistered primary condition",
+  "model": "3-qubit X-only repetition code; ideal syndrome readout; independent calibration on known |000> states",
+  "p": 0.02,
+  "true_pair_b": 0.04,
+  "calibration_first_bit_marginal": 0.058399999999999994,
+  "estimated_b_clipping": [
+    0,
+    0.08
+  ],
+  "N_values": [
+    0,
+    50,
+    200,
+    1000,
+    5000
+  ],
+  "replicates_per_N": 2000,
+  "random_seed": 20261025,
+  "python": "3.13.5",
+  "calibration_measurement": "physical qubit 0, single-shot computational-basis measurement of prepared |000> state",
+  "logical_error_evaluation": "exact 8-mask enumeration on true distribution; no re-use of calibration samples",
+  "exact_minimum_weight_LER": 0.039583999999999994,
+  "exact_oracle_MAP_LER": 0.02,
+  "decision_threshold_b": 0.0196,
+  "results": [
+    {
+      "N": 0,
+      "replicates": 2000,
+      "number_selecting_oracle_ambiguous_branch": 0,
+      "oracle_branch_fraction": 0.0,
+      "oracle_branch_wilson95": [
+        1.0842021724855044e-19,
+        0.001917047281252934
+      ],
+      "average_exact_logical_error_rate": 0.039583999999999994,
+      "average_exact_logical_error_rate_wilson_derived95": [
+        0.03954645654604394,
+        0.039583999999999994
+      ],
+      "improvement_vs_min_weight_percentage_points": 0.0,
+      "mean_estimated_b": null
+    },
+    {
+      "N": 50,
+      "replicates": 2000,
+      "number_selecting_oracle_ambiguous_branch": 1596,
+      "oracle_branch_fraction": 0.798,
+      "oracle_branch_wilson95": [
+        0.7798404648946978,
+        0.8150169749256754
+      ],
+      "average_exact_logical_error_rate": 0.023955967999999998,
+      "average_exact_logical_error_rate_wilson_derived95": [
+        0.023622707563055574,
+        0.024311604335502238
+      ],
+      "improvement_vs_min_weight_percentage_points": 1.5628031999999996,
+      "mean_estimated_b": 0.03765375
+    },
+    {
+      "N": 200,
+      "replicates": 2000,
+      "number_selecting_oracle_ambiguous_branch": 1799,
+      "oracle_branch_fraction": 0.8995,
+      "oracle_branch_wilson95": [
+        0.8855475124040529,
+        0.9119207668182258
+      ],
+      "average_exact_logical_error_rate": 0.021968191999999997,
+      "average_exact_logical_error_rate_wilson_derived95": [
+        0.021724943702631866,
+        0.022241437517079028
+      ],
+      "improvement_vs_min_weight_percentage_points": 1.7615807999999997,
+      "mean_estimated_b": 0.039563125
+    },
+    {
+      "N": 1000,
+      "replicates": 2000,
+      "number_selecting_oracle_ambiguous_branch": 1995,
+      "oracle_branch_fraction": 0.9975,
+      "oracle_branch_wilson95": [
+        0.9941608466835673,
+        0.9989316912715861
+      ],
+      "average_exact_logical_error_rate": 0.02004896,
+      "average_exact_logical_error_rate_wilson_derived95": [
+        0.02002092175813726,
+        0.020114353978549018
+      ],
+      "improvement_vs_min_weight_percentage_points": 1.9535039999999992,
+      "mean_estimated_b": 0.04019583333333333
+    },
+    {
+      "N": 5000,
+      "replicates": 2000,
+      "number_selecting_oracle_ambiguous_branch": 2000,
+      "oracle_branch_fraction": 1.0,
+      "oracle_branch_wilson95": [
+        0.9980829527187469,
+        0.9999999999999998
+      ],
+      "average_exact_logical_error_rate": 0.02,
+      "average_exact_logical_error_rate_wilson_derived95": [
+        0.020000000000000004,
+        0.02003754345395606
+      ],
+      "improvement_vs_min_weight_percentage_points": 1.9583999999999995,
+      "mean_estimated_b": 0.039866354166666666
+    }
+  ],
+  "H1_at_N1000": {
+    "requirement_branch_fraction_at_least_0_95": true,
+    "requirement_average_LER_below_baseline": true,
+    "H1_criteria_met": true,
+    "statistical_note": "Two pre-registered descriptive criteria on 2000 replicates; this is not an independently externally audited hypothesis test."
+  },
+  "limitations": [
+    "No circuit-level measurement, leakage, Z/Y errors, drift, or actual hardware",
+    "Known p; destructive reference |000> calibration; clip b to [0,0.08]",
+    "Monte Carlo randomization is for calibration only; final LER evaluated analytically",
+    "Only true b=0.04 here; full preregistered b grid and independent eval Monte Carlo remain NOT RUN"
+  ]
+}

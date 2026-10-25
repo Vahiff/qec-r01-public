@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/mnt/data/qec-r01/src/plot_calibration.py", line 45, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/mnt/data/qec-r01/src/plot_calibration.py", line 27, in main
+    ax.errorbar(n,fractions,yerr=[[x-y for x,y in zip(fractions,lows)],[y-x for x,y in zip(fractions,highs)]],
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                fmt='o-',capsize=4,label='Oracle MAP branch selected (Wilson 95% CI)')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/_api/deprecation.py", line 453, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/__init__.py", line 1524, in inner
+    return func(
+        ax,
+        *map(cbook.sanitize_sequence, args),
+        **{k: cbook.sanitize_sequence(v) for k, v in kwargs.items()})
+  File "/opt/pyvenv/lib/python3.13/site-packages/matplotlib/axes/_axes.py", line 3825, in errorbar
+    raise ValueError(
+        f"'{dep_axis}err' must not contain negative values")
+ValueError: 'yerr' must not contain negative values
+ANALYTIC ONLY figure: results/figures/analytic_population_decay_NOT_QUTIP.png | gamma=0.4

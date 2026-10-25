@@ -1,0 +1,3 @@
+BLOCKED: QuTiP experiment cannot run; missing dependency: No module named 'qutip'
+
+EXIT_CODE=3
