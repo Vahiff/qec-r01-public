@@ -46,7 +46,8 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" \
             --data-binary @/tmp/qec_paper_payload.json)
-          echo "PDF_BASE64_TRANSFER_BLOB_SHA=$(printf '%s' "$response" | jq -r .sha)
+          transfer_sha=$(printf '%s' "$response" | jq -r '.sha')
+          echo "PDF_BASE64_TRANSFER_BLOB_SHA=$transfer_sha"
       - name: Commit PDF to same branch
         run: |
           git config user.name 'github-actions[bot]'
