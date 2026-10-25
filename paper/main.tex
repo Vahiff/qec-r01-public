@@ -116,6 +116,23 @@ The exact finite-sample formula of Eq.~\eqref{eq:binomial} predicts $\pi_{1000}\
 \label{fig:logical}
 \end{figure}
 
+\begin{table}[htbp]
+\centering
+\caption{Contextual comparison with published quantum-error-correction research. The experimental studies are not directly comparable benchmarks for this three-qubit model.}
+\label{tab:comparison}
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}llll@{}}
+\toprule
+Study & Noise Model & Hardware Used & Key Focus\\
+\midrule
+This work & Assumed correlated $X$ & None (code capacity) & Finite calibration\\
+Sivak et al. (2024) \cite{sivak2024} & Calibrated decoder priors & Superconducting (Sycamore) & Decoder-prior optimization\\
+Google Quantum AI (2024) \cite{googleqai2024} & Device noise, including correlations & Superconducting (Willow) & Surface-code error suppression\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 \section{Limitations and Discussion}
 The model is a single-round, \textbf{code-capacity $X$-only} description with perfect syndrome readout: no gate faults, measurement errors, leakage, drift, $Y/Z$ noise, or experimental data. The one-bit estimator assumes exactly known $p$ and access to independently prepared reference states, and estimates one artificial pair-event parameter clipped to $[0,0.08]$. Only the primary true $b=0.04$ case of the registered noise-strength grid was executed; the other points and independent evaluation-shot Monte Carlo for fitted decoders remain \textbf{NOT RUN}. Confidence intervals are conditional on the specified pseudorandom calibration experiment. A complete novelty review and independent experimental validation remain \textbf{NOT VERIFIED}.
 
@@ -127,8 +144,16 @@ A three-physical-qubit code cannot encode an unknown logical qubit while perfect
 
 The contribution of this note is a limited but reproducible calibration case study with an exact binomial selection formula and a conservative finite-sample tail bound. The measured calibration-branch frequencies are neither a novel QEC decoder nor a quantum-device benchmark. Any external submission should follow affiliation confirmation, fuller literature review, independent code checks, and a clear statement of the incomplete noise-grid study.
 
-\section*{Code and Data Availability}
+\section*{Code and Reproducibility}
 The \href{https://github.com/Vahiff/qec-r01-public}{public QEC-R01 repository} contains code and numerical records. Manuscript sources and the copied plots are in \texttt{paper/}. The manuscript names Vahif Khalilov as author; an institutional affiliation has not been provided. No arXiv submission has occurred.
 
 \printbibliography[heading=bibintoc,title={References}]
+\section*{Competing Interests}
+The author declares no competing interests (author-supplied declaration; independent verification has not been performed).
+
+\section*{Data Availability}
+The source code, numerical datasets, and the available public record of the reported external AI review, including screenshots, are deposited at
+\url{https://github.com/Vahiff/qec-r01-public} (version 1.0.0 release candidate).
+A complete verbatim peer-review transcript has \textbf{not} been authenticated or deposited as of this draft. The provisional rebuttal is not an independently verified peer-review report.
+
 \end{document}

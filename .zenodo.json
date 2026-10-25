@@ -1,0 +1,13 @@
+{
+  "creators": [
+    {
+      "name": "Khalilov, Vahif"
+    }
+  ],
+  "title": "Finite-Calibration Bounds for Correlated-Noise Decoders in a 3-Qubit Repetition Code",
+  "version": "1.0.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "Pilot code-capacity study; not a quantum-hardware demonstration. Editorial and independent verification pending.",
+  "license": "cc-by-4.0"
+}

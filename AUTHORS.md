@@ -4,4 +4,4 @@
 
 CRediT roles: **Conceptualization**, **Methodology**, **Software**, **Writing – original draft**.
 
-GitHub account: [Vahiff](https://github.com/Vahiff).
+GitHub username: [Vahiff](https://github.com/Vahiff).
