@@ -23,7 +23,7 @@ jobs:
       - name: Install LaTeX and Biber
         run: |
           sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended texlive-bibtex-extra biber
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended texlive-bibtex-extra biber cm-super lmodern
       - name: Build manuscript (no shell escape)
         working-directory: paper
         run: |
