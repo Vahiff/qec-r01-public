@@ -1,0 +1,17 @@
+QEC-R01 independent unit tests - captured local subprocess
+UTC start: 2026-10-25T05:53:01.283562+00:00
+Command: python -S -m unittest discover -s tests -v
+Exit code: 0
+=== STDOUT ===
+(empty)
+=== STDERR ===
+test_decoder_branch (test_pilot.PilotTests.test_decoder_branch) ... ok
+test_each_syndrome_has_two_complementary_masks (test_pilot.PilotTests.test_each_syndrome_has_two_complementary_masks) ... ok
+test_exact_known_rates (test_pilot.PilotTests.test_exact_known_rates) ... ok
+test_mc_deterministic_and_counts (test_pilot.PilotTests.test_mc_deterministic_and_counts) ... ok
+test_probabilities_sum_to_one (test_pilot.PilotTests.test_probabilities_sum_to_one) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.012s
+
+OK
