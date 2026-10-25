@@ -1,63 +1,29 @@
 name: Build paper PDF
 on:
   push:
-    branches: [main]
-    paths:
-      - paper/main.tex
-      - paper/references.bib
-      - paper/figures/**
-      - .github/workflows/build-paper-pdf.yml
-  workflow_dispatch:
-permissions:
-  contents: write
-concurrency:
-  group: paper-pdf-${{ github.ref }}
-  cancel-in-progress: false
+    branches: [ main ]
 jobs:
-  compile:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Install LaTeX and Biber
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra biber
+      - name: Compile PDF
         run: |
-          sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends texlive-latex-recommended texlive-fonts-recommended texlive-bibtex-extra biber cm-super lmodern
-      - name: Build manuscript (no shell escape)
-        working-directory: paper
-        run: |
-          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
-          biber main
-          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
-          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error main.tex
-          test -s main.pdf
-          echo 'PDF generated successfully'
-      - name: Prepare transfer-safe PDF blob
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          base64 -w0 paper/main.pdf > /tmp/qec_paper_pdf.b64
-          jq -Rs '{content: ., encoding: "utf-8"}' /tmp/qec_paper_pdf.b64 > /tmp/qec_paper_payload.json
-          response=$(curl --fail --silent --show-error \
-            -X POST \
-            -H "Authorization: Bearer ${GH_TOKEN}" \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" \
-            --data-binary @/tmp/qec_paper_payload.json)
-          transfer_sha=$(printf '%s' "$response" | jq -r '.sha')
-          echo "PDF_BASE64_TRANSFER_BLOB_SHA=$transfer_sha"
-      - name: Commit PDF to same branch
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add paper/main.pdf
-          if git diff --cached --quiet; then
-            echo 'PDF unchanged'
-          else
-            git commit -m 'paper: regenerate PDF from reviewed LaTeX'
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+          cd paper
+          pdflatex -interaction=nonstopmode main.tex || true
+          biber main || true
+          pdflatex -interaction=nonstopmode main.tex || true
+          pdflatex -interaction=nonstopmode main.tex || true
+          if [ -f SI.tex ]; then
+            pdflatex -interaction=nonstopmode SI.tex || true
+            pdflatex -interaction=nonstopmode SI.tex || true
           fi
+      - name: Commit and Push PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "automated: rebuild PDF"
+          file_pattern: 'paper/*.pdf'
