@@ -1,0 +1,114 @@
+{
+  "title": "QEC-R01 paired X burst pilot",
+  "code": "3-qubit repetition code (X-distance 3, full quantum distance 1)",
+  "p_independent_flip_each_qubit": 0.02,
+  "assumed_burst_rate_for_MAP": 0.04,
+  "threshold_burst_rate_for_ambiguous_syndrome": 0.0196,
+  "seed": 20261025,
+  "shots_per_condition": 200000,
+  "baseline_table": {
+    "00": "000",
+    "10": "001",
+    "11": "010",
+    "01": "100"
+  },
+  "informed_table": {
+    "00": "000",
+    "01": "011",
+    "10": "001",
+    "11": "010"
+  },
+  "results": [
+    {
+      "true_pair_burst_rate": 0,
+      "exact_LER_min_weight": 0.001184,
+      "exact_LER_correlated_MAP": 0.02,
+      "exact_improvement_pp": -1.8816,
+      "shots": 200000,
+      "failures_min_weight": 219,
+      "failures_correlated_MAP": 3979,
+      "empirical_LER_min_weight": 0.001095,
+      "empirical_LER_correlated_MAP": 0.019895,
+      "empirical_improvement_pp": -1.8800000000000001,
+      "improvement_95pct_approx_CI_pp": [
+        -1.9406754715251557,
+        -1.8193245284748443
+      ],
+      "discordant_shots_baseline_worse": 72,
+      "discordant_shots_informed_worse": 3832
+    },
+    {
+      "true_pair_burst_rate": 0.01,
+      "exact_LER_min_weight": 0.010784,
+      "exact_LER_correlated_MAP": 0.019999999999999997,
+      "exact_improvement_pp": -0.9215999999999996,
+      "shots": 200000,
+      "failures_min_weight": 2119,
+      "failures_correlated_MAP": 3918,
+      "empirical_LER_min_weight": 0.010595,
+      "empirical_LER_correlated_MAP": 0.01959,
+      "empirical_improvement_pp": -0.8995,
+      "improvement_95pct_approx_CI_pp": [
+        -0.9732596854819623,
+        -0.8257403145180376
+      ],
+      "discordant_shots_baseline_worse": 1941,
+      "discordant_shots_informed_worse": 3740
+    },
+    {
+      "true_pair_burst_rate": 0.02,
+      "exact_LER_min_weight": 0.020384,
+      "exact_LER_correlated_MAP": 0.019999999999999997,
+      "exact_improvement_pp": 0.03840000000000024,
+      "shots": 200000,
+      "failures_min_weight": 4000,
+      "failures_correlated_MAP": 4009,
+      "empirical_LER_min_weight": 0.02,
+      "empirical_LER_correlated_MAP": 0.020045,
+      "empirical_improvement_pp": -0.0045000000000000005,
+      "improvement_95pct_approx_CI_pp": [
+        -0.08971492833440628,
+        0.08071492833440629
+      ],
+      "discordant_shots_baseline_worse": 3776,
+      "discordant_shots_informed_worse": 3785
+    },
+    {
+      "true_pair_burst_rate": 0.04,
+      "exact_LER_min_weight": 0.039583999999999994,
+      "exact_LER_correlated_MAP": 0.02,
+      "exact_improvement_pp": 1.9583999999999995,
+      "shots": 200000,
+      "failures_min_weight": 7926,
+      "failures_correlated_MAP": 4060,
+      "empirical_LER_min_weight": 0.03963,
+      "empirical_LER_correlated_MAP": 0.0203,
+      "empirical_improvement_pp": 1.933,
+      "improvement_95pct_approx_CI_pp": [
+        1.8287634194762319,
+        2.037236580523768
+      ],
+      "discordant_shots_baseline_worse": 7627,
+      "discordant_shots_informed_worse": 3761
+    },
+    {
+      "true_pair_burst_rate": 0.08,
+      "exact_LER_min_weight": 0.07798399999999998,
+      "exact_LER_correlated_MAP": 0.02,
+      "exact_improvement_pp": 5.798399999999998,
+      "shots": 200000,
+      "failures_min_weight": 15569,
+      "failures_correlated_MAP": 3973,
+      "empirical_LER_min_weight": 0.077845,
+      "empirical_LER_correlated_MAP": 0.019865,
+      "empirical_improvement_pp": 5.798,
+      "improvement_95pct_approx_CI_pp": [
+        5.666673915657368,
+        5.929326084342631
+      ],
+      "discordant_shots_baseline_worse": 15113,
+      "discordant_shots_informed_worse": 3517
+    }
+  ],
+  "status": "run and validated against exact enumeration; toy code-capacity model"
+}
