@@ -1,0 +1,22 @@
+QEC-R01 timed reproduction; this file documents THIS run, not earlier ones
+UTC start: 2026-10-25T05:47:57.573332+00:00
+Python: 3.13.5
+Platform: Linux-6.18.55-x86_64-with-glibc2.41
+Command: python src/pilot.py --shots 200000 --seed 20261025 --output results/pilot.json
+Source SHA256: e51a2bd66b29ff4cff4e2ff98747fe315fffd416c6629fb02f853306d593e41e
+Return code: 0
+Elapsed seconds: 2.020566
+JSON SHA256: adf5cd4369fffb7cfac2b064923e1b4f5261b321b52631e80bb45c07c3cd7457
+Matches previous JSON: True
+=== STDOUT ===
+QEC-R01 | tests PASS | code-capacity toy model
+p=0.0200, decoder assumes burst b=0.0400, analytic threshold b*=0.0196
+b_true   exact_baseline  exact_MAP  gain_pp  MC_gain_pp  95%CI_gain_pp
+ 0.000        0.001184   0.020000   -1.882      -1.880  [-1.941,-1.819]
+ 0.010        0.010784   0.020000   -0.922      -0.899  [-0.973,-0.826]
+ 0.020        0.020384   0.020000    0.038      -0.005  [-0.090, 0.081]
+ 0.040        0.039584   0.020000    1.958       1.933  [ 1.829, 2.037]
+ 0.080        0.077984   0.020000    5.798       5.798  [ 5.667, 5.929]
+JSON: /mnt/data/qec-r01/results/pilot.json
+=== STDERR ===
+(empty)
