@@ -1,5 +1,9 @@
 # QEC-R01 — correlated X-noise in a 3-qubit repetition code
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Build Passing](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml/badge.svg)](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml)
+
+**Project files:** [Authors and CRediT roles](AUTHORS.md) · [Release changelog](CHANGELOG.md) · [Manuscript PDF](paper/main.pdf) · [Manuscript source](paper/main.tex)
+
 **Status:** executable **exploratory** code-capacity pilot. The primary H1 calibration condition at `b=0.04` was executed in Phase 2; generality and scientific novelty are not verified. Repository publication is **not** a peer-reviewed result.
 
 ## Model and research question
@@ -47,7 +51,6 @@ No tokens, credentials or private user data are needed. Do not put secrets in th
 4. Re-run, review literature novelty, prepare plots/report and document limitations. Do not claim publication-readiness until completed.
 
 Relevant background: [IBM repetition codes](https://quantum.cloud.ibm.com/docs/tutorials/repetition-codes), [Sivak et al., PRL 133, 150603 (2024)](https://doi.org/10.1103/PhysRevLett.133.150603), [Google Quantum AI, Nature (2024)](https://www.nature.com/articles/s41586-024-08449-y).
-[Изменено вручную пользователем во время сессии]
 
 
 ## Phase 2 (2026-10-25) — executed outcomes
