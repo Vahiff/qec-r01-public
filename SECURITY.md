@@ -1,1 +1,1 @@
-Please report vulnerabilities to vahiff@example.com.
+Please open a private security advisory in this repository.
