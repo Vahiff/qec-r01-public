@@ -47,3 +47,4 @@ No tokens, credentials or private user data are needed. Do not put secrets in th
 4. Re-run, review literature novelty, prepare plots/report and document limitations. Do not claim publication-readiness until completed.
 
 Relevant background: [IBM repetition codes](https://quantum.cloud.ibm.com/docs/tutorials/repetition-codes), [Sivak et al., PRL 133, 150603 (2024)](https://doi.org/10.1103/PhysRevLett.133.150603), [Google Quantum AI, Nature (2024)](https://www.nature.com/articles/s41586-024-08449-y).
+[Изменено вручную пользователем во время сессии]
