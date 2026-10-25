@@ -1,0 +1,34 @@
+QEC-R01 Phase 3 compilation record — 2026-10-25
+Environment: TeX Live 2025/dev, pdfTeX 3.141592653-2.6-1.40.26; Biber 2.20
+Working directory: paper/
+
+Command 1: pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+Result: PASS (after correcting escaped underscore from initial failed development attempt)
+Command 2: biber main
+Result: PASS; 6 citekeys loaded from references.bib
+Command 3: pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+Result: PASS
+Command 4: pdflatex -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+Result: PASS
+
+FINAL PDFLATEX OUTPUT:
+Output written on main.pdf (5 pages, 431887 bytes).
+Pages: 5
+Final LaTeX warnings: none (checked for LaTeX Warning, BibLaTeX Warning, Overfull hbox)
+Rendered pages: PASS (5 PNGs at 110 dpi, visually inspected)
+
+SHA256 main.tex: 07751c11823c06542c9d9627d005c643f85a6421d8f9266034d47adb5f0f8185
+SHA256 references.bib: 00cac4456c0d5698d2dea6e62c4ca9b5b7813d4179d0fd70b6f7db2f825e89fd
+SHA256 figures/calibration_branch_selection.png: 0808a2526de9ce2ebd314e6ef86d783890c7faf30ca885bfe6d31dfec9a2b2ef
+SHA256 figures/calibration_logical_error.png: 00bcfde26ce244fd4a246f706f54114e05bf968cbb2b491c146872ccec74e2ef
+SHA256 main.pdf: 798c0802a815a96da42bc9d421cdf0a772ac52de3a8a738b5e04f73af089ec60
+
+BIBER FINAL TAIL:
+INFO - LaTeX decoding ...
+INFO - Found BibTeX data source 'references.bib'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+INFO - No sort tailoring available for locale 'en-US'
+INFO - Writing 'main.bbl' with encoding 'UTF-8'
+INFO - Output to main.bbl
