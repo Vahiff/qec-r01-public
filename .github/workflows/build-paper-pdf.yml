@@ -42,5 +42,7 @@ jobs:
             echo 'PDF unchanged'
           else
             git commit -m 'paper: regenerate PDF from reviewed LaTeX'
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           fi
