@@ -2,8 +2,8 @@
 
 **Manuscript:** *Finite-Calibration Bounds for Correlated-Noise Decoders in a 3-Qubit Repetition Code*  
 **Project:** QEC-R01  
-**Response status:** **Provisional author response to owner-summarized themes**, not a point-by-point response to an authenticated full review.  
-**Source record:** [`REVIEW_GEMINI.md`](REVIEW_GEMINI.md). The full reviewer text was not supplied; statements below are **paraphrased themes**, not purported quotations.  
+**Response status:** **Provisional author response to selected reviewer themes**, not a verified point-by-point reply to the full original transcript.  
+**Source record:** [`REVIEW_GEMINI.md`](REVIEW_GEMINI.md). A full owner-supplied review text has now been deposited. Its exact fidelity to the original Gemini output remains **NOT VERIFIED**; statements below are **earlier paraphrased themes**, not purported quotations.  
 **Disposition:** The owner reports a **Reject** recommendation. We acknowledge that recommendation without representing this as formal journal peer review or an institutional assessment by Google.
 
 We thank the reviewer for scrutinizing the scientific scope, execution evidence, and statistical interpretation. A rejection recommendation is a reason to improve the manuscript and identify unresolved validation requirements; it is not a reason to suppress inconvenient experimental limitations.
@@ -32,7 +32,7 @@ The R = 2,000 independent calibration repetitions estimate how often this decisi
 
 ## Remaining requirements before a research submission
 
-- Obtain the exact complete external review transcript with provenance and reconcile the response point by point; do not cite these summarized concerns as direct reviewer quotations.
+- Authenticate the owner-supplied review against the complete original Gemini session, then reconcile this provisional response point by point; do not cite these earlier summarized concerns as direct reviewer quotations.
 - Complete the registered sweep over other \(b\) values, add controls and independent replication, and stress-test unknown \(p\), imperfect syndromes, and distribution shift.
 - Execute the QuTiP density-matrix cross-check or explicitly remove it from any proposed evidence of validation.
 - Confirm author contributions, affiliations, comparison with existing literature, and the intended claims of novelty; consider renaming the paper as an *exploratory note* if these requirements remain open.
