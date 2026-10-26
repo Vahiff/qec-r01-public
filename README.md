@@ -1,6 +1,8 @@
 # QEC-R01 — correlated X-noise in a 3-qubit repetition code
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Build Passing](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml/badge.svg)](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Paper CI](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml/badge.svg)](https://github.com/Vahiff/qec-r01-public/actions/workflows/build-paper-pdf.yml)
+
+**CI note:** the workflow builds PDFs as downloadable artifacts and does not commit generated results directly to `main`; a green PDF build is only a compilation/test signal, not scientific peer review.
 
 **Project files:** [Authors and CRediT roles](AUTHORS.md) · [Release changelog](CHANGELOG.md) · [Manuscript PDF](paper/main.pdf) · [Manuscript source](paper/main.tex)
 

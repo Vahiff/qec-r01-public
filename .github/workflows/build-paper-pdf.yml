@@ -1,29 +1,56 @@
-name: Build paper PDF
+name: QEC-R01 verified Python and paper build
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+    paths:
+      - '.github/workflows/build-paper-pdf.yml'
+      - 'paper/**'
+      - 'src/**'
+      - 'tests/**'
+  pull_request:
+    paths:
+      - '.github/workflows/build-paper-pdf.yml'
+      - 'paper/**'
+      - 'src/**'
+      - 'tests/**'
+  workflow_dispatch:
+permissions:
+  contents: read
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Install LaTeX
-        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-latex-extra biber
-      - name: Compile PDF
+      - name: Python unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Install LaTeX, BibLaTeX and Biber
         run: |
-          cd paper
-          pdflatex -interaction=nonstopmode main.tex || true
-          biber main || true
-          pdflatex -interaction=nonstopmode main.tex || true
-          pdflatex -interaction=nonstopmode main.tex || true
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-bibtex-extra texlive-fonts-recommended biber cm-super lmodern
+      - name: Compile paper (fail on any error)
+        shell: bash
+        working-directory: paper
+        run: |
+          set -euo pipefail
+          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+          biber main
+          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+          pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error main.tex
+          test -s main.pdf
           if [ -f SI.tex ]; then
-            pdflatex -interaction=nonstopmode SI.tex || true
-            pdflatex -interaction=nonstopmode SI.tex || true
+            pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error SI.tex
+            pdflatex -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error SI.tex
+            test -s SI.pdf
           fi
-      - name: Commit and Push PDF
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Publish build artifacts without mutating main
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "automated: rebuild PDF"
-          file_pattern: 'paper/*.pdf'
+          name: qec-r01-paper-${{ github.sha }}
+          path: |
+            paper/main.pdf
+            paper/SI.pdf
+          if-no-files-found: error
+          retention-days: 30
