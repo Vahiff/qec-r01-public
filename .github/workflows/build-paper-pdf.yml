@@ -46,7 +46,7 @@ jobs:
             test -s SI.pdf
           fi
       - name: Publish build artifacts without mutating main
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: qec-r01-paper-${{ github.sha }}
           path: |
